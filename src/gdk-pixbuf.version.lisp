@@ -6,7 +6,7 @@
 ;;; library, see <http://www.gtk.org>. The API documentation for the Lisp
 ;;; binding is available at <http://www.crategus.com/books/cl-cffi-gtk4/>.
 ;;;
-;;; Copyright (C) 2012 - 2025 Dieter Kaiser
+;;; Copyright (C) 2012 - 2026 Dieter Kaiser
 ;;;
 ;;; Permission is hereby granted, free of charge, to any person obtaining a
 ;;; copy of this software and associated documentation files (the "Software"),
@@ -37,6 +37,8 @@
 ;;;     gdk_pixbuf_major_version
 ;;;     gdk_pixbuf_minor_version
 ;;;     gdk_pixbuf_micro_version
+;;;
+;;;     gdk-pixbuf:version-string
 ;;; ----------------------------------------------------------------------------
 
 (in-package :gdk-pixbuf)
@@ -73,12 +75,12 @@
 (setf (liber:alias-for-symbol '+major-version+)
       "Constant"
       (liber:symbol-documentation '+major-version+)
- "@version{2024-04-02}
+ "@version{2026-03-01}
   @begin{short}
     The major version number of the GDK-Pixbuf library.
   @end{short}
-  E.g. in GDK-Pixbuf version 2.42.8 this is 2. This variable is in the library,
-  so represents the GDK-Pixbuf library you have loaded.
+  For example, in GDK-Pixbuf version 2.42.8 this is 2. This variable is in the
+  library, so represents the GDK-Pixbuf library you have loaded.
   @see-symbol{gdk-pixbuf:+version+}
   @see-symbol{gdk-pixbuf:+minor-version+}
   @see-symbol{gdk-pixbuf:+micro-version+}")
@@ -96,12 +98,12 @@
 (setf (liber:alias-for-symbol '+minor-version+)
       "Constant"
       (liber:symbol-documentation '+minor-version+)
- "@version{2024-04-02}
+ "@version{2026-03-01}
   @begin{short}
     The minor version number of the GDK-Pixbuf library.
   @end{short}
-  E.g. in GDK-Pixbuf version 2.42.8 this is 42. This variable is in the library,
-  so represents the GDK-Pixbuf library you have loaded.
+  For example, in GDK-Pixbuf version 2.42.8 this is 42. This variable is in the
+  library, so represents the GDK-Pixbuf library you have loaded.
   @see-symbol{gdk-pixbuf:+version+}
   @see-symbol{gdk-pixbuf:+major-version+}
   @see-symbol{gdk-pixbuf:+micro-version+}")
@@ -118,16 +120,33 @@
 (setf (liber:alias-for-symbol '+micro-version+)
       "Constant"
       (liber:symbol-documentation '+micro-version+)
- "@version{2024-04-02}
+ "@version{2025-03-01}
   @begin{short}
     The micro version number of the GDK-Pixbuf library.
   @end{short}
-  E.g. in GDK-Pixbuf version 2.42.8 this is 8. This variable is in the library,
-  so represents the GDK-Pixbuf library you have loaded.
+  For example, in GDK-Pixbuf version 2.42.8 this is 8. This variable is in the
+  library, so represents the GDK-Pixbuf library you have loaded.
   @see-symbol{gdk-pixbuf:+version+}
   @see-symbol{gdk-pixbuf:+major-version+}
   @see-symbol{gdk-pixbuf:+minor-version+}")
 
 (export '+micro-version+)
+
+;;; ----------------------------------------------------------------------------
+
+(defun version-string ()
+ #+liber-documentation
+ "@version{2026-03-01}
+  @return{The string containing the GdkPixbuf version.}
+  @begin{short}
+    Returns the version of the GdkPixbuf library as a human readable string of
+    the form \"x.y.z\".
+  @end{short}
+  @see-symbol{gdk-pixbuf:+major-version+}
+  @see-symbol{gdk-pixbuf:+minor-version+}
+  @see-symbol{gdk-pixbuf:+micro-version+}"
+  (format nil "~a" +version+))
+
+(export 'version-string)
 
 ;;; --- End of file gdk-pixbuf.version.lisp ------------------------------------

@@ -6,7 +6,7 @@
 ;;; library, see <http://www.gtk.org>. The API documentation of the Lisp binding
 ;;; is available at <http://www.crategus.com/books/cl-cffi-gtk4/>.
 ;;;
-;;; Copyright (C) 2011 - 2025 Dieter Kaiser
+;;; Copyright (C) 2011 - 2026 Dieter Kaiser
 ;;;
 ;;; Permission is hereby granted, free of charge, to any person obtaining a
 ;;; copy of this software and associated documentation files (the "Software"),
@@ -55,6 +55,7 @@
     @about-symbol{+major-version+}
     @about-symbol{+minor-version+}
     @about-symbol{+micro-version+}
+    @about-function{version-string}
   @end{section}
   @begin[The GdkPixbuf object]{section}
     @about-symbol{colorspace}
